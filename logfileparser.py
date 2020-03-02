@@ -96,15 +96,15 @@ def fileCounter():
         
 #Output
 print("Executing...")
-print("Total Log Length",file_len(LOCAL_FILE))
+print("Total Log Length"file_len(LOCAL_FILE))
 totalEntries = file_len(LOCAL_FILE)
-print("Daily Average: ", round(totalEntries / 365, 2))
-print("Weekly Average: ", round(totalEntries / 52, 2))
-print("Monthly Average:", round(totalEntries / 12, 2))
-print("Monthly Breakdown:", months_count)
-print("Redirects:", redirects)
+print("Daily Average: " round(totalEntries / 365, 2))
+print("Weekly Average: " round(totalEntries / 52, 2))
+print("Monthly Average:" round(totalEntries / 12, 2))
+print("Monthly Breakdown:" months_count)
+print("Redirects:" redirects)
 print("Redirect Percentage (3-Series Code): {0:.2%}".format(redirects / totalEntries))
-print("Errors:", errors)
+print("Errors:" errors)
 print("Client Error (4-Series Code) requests: {0:.2%}".format(errors / totalEntries))
 fileCounter()
 
