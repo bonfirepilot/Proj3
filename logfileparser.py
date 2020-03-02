@@ -8,8 +8,8 @@ import collections
 
 #File Setup and Variable Reset
 loopCount = 0
-redirectCounter = 0
-errorCounter = 0
+redirects = 0
+errors = 0
 URL = 'https://s3.amazonaws.com/tcmg476/http_access_log'
 LOCAL_FILE = 'local_copy.log'
 
@@ -61,9 +61,13 @@ def fileCounter():
             except:
                 pass
     counter = collections.Counter(filelog)
- #Most Commonly Requested File Finder
+    least_common = collections.Counter(filelog).most_common()[-1]
+#Most Commonly Requested File Finder
     for count in counter.most_common(1):
         print("Most commonly requested file: {} with {} requests.".format(str(count[0]), str(count[1])))
+#Least Commonly Requested File Finder
+    for count in counter.least_common(-1):
+        print("Least commonly requested file: {} with {} requests.".format(str(count[0]), str(count[1])))
         
  #Timestamp Parser for Log Subdivision
     timestamp = match.group(3)
@@ -72,9 +76,9 @@ def fileCounter():
     match.group(7)
  #ReDirect Counter, Error Counter, and Log Subdivider
     if (match.group(7)[0] == "3"):
-        redirectCounter += 1
+        redirects += 1
     elif (match.group(7)[0] == "4"):
-        errorCounter += 1
+        errors += 1
     if (month == "Jan"):jan_logs.write(line)
     elif (month == "Feb"):feb_logs.write(line)
     elif (month == "Mar"):mar_logs.write(line)
@@ -87,7 +91,20 @@ def fileCounter():
     elif (month == "Oct"):oct_logs.write(line)
     elif (month == "Nov"):nov_logs.write(line)
     elif (month == "Dec"):dec_logs.write(line)
-
     else:
         continue
+        
+#Output
+print("Executing...")
+print("Total Log Length",file_len(LOCAL_FILE))
+totalEntries = file_len(LOCAL_FILE)
+print("Daily Average: ", round(totalEntries / 365, 2))
+print("Weekly Average: ", round(totalEntries / 52, 2))
+print("Monthly Average:", round(totalEntries / 12, 2))
+print("Monthly Breakdown:", months_count)
+print("Redirects:", redirects)
+print("Redirect Percentage (3-Series Code): {0:.2%}".format(redirects / totalEntries))
+print("Errors:", errors)
+print("Client error (4-Series Code) requests: {0:.2%}".format(errors / totalEntries))
+fileCounter()
 
