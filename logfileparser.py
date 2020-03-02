@@ -105,6 +105,6 @@ print("Monthly Breakdown:", months_count)
 print("Redirects:", redirects)
 print("Redirect Percentage (3-Series Code): {0:.2%}".format(redirects / totalEntries))
 print("Errors:", errors)
-print("Client error (4-Series Code) requests: {0:.2%}".format(errors / totalEntries))
+print("Client Error (4-Series Code) requests: {0:.2%}".format(errors / totalEntries))
 fileCounter()
 
