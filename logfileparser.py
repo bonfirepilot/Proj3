@@ -38,11 +38,11 @@ aprlogs = open("aprLog.txt", "a+");
 maylogs = open("mayLog.txt", "a+");
 junlogs = open("junLog.txt", "a+");
 jullogs = open("julLog.txt", "a+");
-auglogs = open("augLogs.txt", "a+");
-seplogs = open("sepLogs.txt", "a+");
-octlogs = open("octLogs.txt", "a+");
-novlogs = open("novLogs.txt", "a+");
-declogs = open("decLogs.txt", "a+");
+auglogs = open("augLog.txt", "a+");
+seplogs = open("sepLog.txt", "a+");
+octlogs = open("octLog.txt", "a+");
+novlogs = open("novLog.txt", "a+");
+declogs = open("decLog.txt", "a+");
 
 #Setting up File Length Counter
 def file_len(LOCAL_FILE):
