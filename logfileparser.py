@@ -1,7 +1,7 @@
 #Project 3 by Jared Crummey
 #TCMG 412 w/ Prof. Mikeal
 
-from urllib.request import urlretrieve
+import urllib
 import os
 import re
 import collections
