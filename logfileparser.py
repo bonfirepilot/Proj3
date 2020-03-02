@@ -46,9 +46,9 @@ dec_logs = open("decLog.txt", "a+");
 #Setting up File Length Counter
 def file_len(LOCAL_FILE):
     with open(LOCAL_FILE) as f:
-        for i, l in enumerate(f):
+        for loopCount, l in enumerate(f):
             pass
-    return i + 1
+    return loopCount + 1
 
 #Finding Get Requests and HTTP
 def fileCounter():
