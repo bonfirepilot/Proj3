@@ -19,3 +19,9 @@ pattern = r'(.*?) - (.*) \[(.*?)\] \"(.*?) (.*?)\"? (.+?) (.+) (.+)'
 
 #Line Reader
 lineRead = open(LOCAL_FILE, 'r').readlines()
+
+#Match Finder.
+for line in lineRead:
+    matchFinder = re.match(pattern, line)
+    if not matchFinder:
+        continue
