@@ -96,7 +96,7 @@ def fileCounter():
         
 #Output
 print("Executing...")
-print("Total Log Length"file_len(LOCAL_FILE))
+print("Total Log Length" file_len(LOCAL_FILE))
 totalEntries = file_len(LOCAL_FILE)
 print("Daily Average: " round(totalEntries / 365, 2))
 print("Weekly Average: " round(totalEntries / 52, 2))
