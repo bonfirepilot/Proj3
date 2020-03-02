@@ -92,7 +92,7 @@ def fileCounter():
     elif (month == "Nov"):nov_logs.write(line)
     elif (month == "Dec"):dec_logs.write(line)
     else:
-        continue
+        continue;
         
 #Output
 print("Executing...")
