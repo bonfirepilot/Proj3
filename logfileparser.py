@@ -66,7 +66,7 @@ def fileCounter():
     for count in counter.most_common(1):
         print("Most commonly requested file: {} with {} requests.".format(str(count[0]), str(count[1])))
 #Least Commonly Requested File Finder
-    for count in counter.least_common(-1):
+    for count in counter.most_common(-1):
         print("Least commonly requested file: {} with {} requests.".format(str(count[0]), str(count[1])))
         
  #Timestamp Parser for Log Subdivision
