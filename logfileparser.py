@@ -50,7 +50,6 @@ def file_len(LOCAL_FILE):
             pass
     return i + 1
 
-
 #Finding Get Requests and HTTP
 def fileCounter():
     filelog = []
@@ -95,9 +94,9 @@ def fileCounter():
         continue
         
 #Output
-print("Executing...")
-print("Total Log Length" file_len(LOCAL_FILE))
 totalEntries = file_len(LOCAL_FILE)
+print("Executing...")
+print("Total Log Length" totalEntries)
 print("Daily Average: " round(totalEntries / 365, 2))
 print("Weekly Average: " round(totalEntries / 52, 2))
 print("Monthly Average:" round(totalEntries / 12, 2))
